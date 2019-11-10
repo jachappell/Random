@@ -18,11 +18,11 @@ namespace Storage_B
     {
       if constexpr (std::is_integral<T>::value)
       {
-        _int_dis = new std::uniform_int_distribution<T>(low, high);
+        _dis.in = new std::uniform_int_distribution<T>(low, high);
       }
       else if (std::is_floating_point<T>::value)
       {
-        _real_dis = new std::uniform_real_distribution<T>(low, high);
+        _dis.re = new std::uniform_real_distribution<T>(low, high);
       }
     }
 
@@ -36,11 +36,11 @@ namespace Storage_B
     {
       if constexpr (std::is_integral<T>::value)
       {
-        delete _int_dis;
+        delete _dis.in;
       }
       else
       {
-        delete _real_dis;
+        delete _dis.re;
       }
     }
 
@@ -48,17 +48,20 @@ namespace Storage_B
     {
       if constexpr (std::is_integral<T>::value)
       {
-        return (*_int_dis)(_gen->get());
+        return (*_dis.in)(_gen->get());
       }
       else if (std::is_floating_point<T>::value)
       {
-        return (*_real_dis)(_gen->get());
+        return (*_dis.re)(_gen->get());
       }
     }
 
   private:
-    std::uniform_int_distribution<T> * _int_dis;
-    std::uniform_real_distribution<T> * _real_dis;
+    union 
+    {
+      std::uniform_int_distribution<T> *in;
+      std::uniform_real_distribution<T> *re;
+    } _dis;
 
     std::shared_ptr<Generator> _gen; 
   };

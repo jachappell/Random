@@ -14,16 +14,16 @@ namespace
 
     virtual ~GeneratorImpl() = default;
 
-    virtual std::mt19937& get() const
+    virtual std::mt19937_64& get() const
     {
       return _gen;
     }
   
   private:
-    static std::mt19937 _gen;
+    static std::mt19937_64 _gen;
   };
 
-  std::mt19937 GeneratorImpl::_gen = std::mt19937(std::random_device{}());
+  std::mt19937_64 GeneratorImpl::_gen = std::mt19937_64(std::random_device{}());
 }
 
 std::unique_ptr<Generator> Storage_B::Generator::Create()

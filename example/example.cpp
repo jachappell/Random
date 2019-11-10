@@ -12,7 +12,7 @@ int main()
 
   auto die = Random<unsigned short>(1, 6);
   std::cout << "Simulate " << num <<  " dice (die) rolls:" << std::endl;
-  for (auto i = 0u ; i < num ; i++)
+  for (auto i = 0u ; i < num ; ++i)
   {
     std::cout << "Roll " << std::setfill(' ') << std::setw(2) << i + 1  << ": "
               << die() << std::endl;
@@ -21,11 +21,11 @@ int main()
   auto min = -1.0;
   auto max = 1.0;
 
-  auto ran = Random<float>(min, max);
+  auto ran = Random<double>(min, max);
   std::cout << "\nGenerate " << num << " random numbers between "
             << min << " and " << max << ":" << std::endl;
 
-  for (auto i = 0u ; i < num ; i++)
+  for (auto i = 0u ; i < num ; ++i)
   {
     std::cout << ran() << std::endl;
   }
