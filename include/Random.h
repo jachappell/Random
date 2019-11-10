@@ -29,8 +29,8 @@ namespace Storage_B
     Random() = delete;
   
     // no copy
-    Random(const Random&) = default;
-    Random& operator=(const Random&) = default;
+    Random(const Random&) = delete;
+    Random& operator=(const Random&) = delete;
 
     ~Random()
     {
