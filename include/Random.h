@@ -63,6 +63,6 @@ namespace Storage_B
       std::uniform_real_distribution<T> *re;
     } _dis;
 
-    std::shared_ptr<Generator> _gen; 
+    std::unique_ptr<Generator> _gen; 
   };
 }
