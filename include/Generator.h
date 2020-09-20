@@ -18,8 +18,8 @@ namespace Storage_B
     Generator& operator=(const Generator&) = delete;
 
     virtual ~Generator() = default;
-    
-    virtual std::mt19937_64& get() const = 0;
+
+    virtual std::mt19937_64& operator()() const = 0;
    
     static std::unique_ptr<Generator> Create();
   };

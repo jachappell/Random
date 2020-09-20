@@ -14,7 +14,7 @@ namespace
 
     virtual ~GeneratorImpl() = default;
 
-    virtual std::mt19937_64& get() const
+    virtual std::mt19937_64& operator()() const
     {
       return _gen;
     }

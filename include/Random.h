@@ -48,11 +48,11 @@ namespace Storage_B
     {
       if constexpr (std::is_integral<T>::value)
       {
-        return (*_dis.in)(_gen->get());
+        return (*_dis.in)((*_gen)());
       }
       else if (std::is_floating_point<T>::value)
       {
-        return (*_dis.re)(_gen->get());
+        return (*_dis.re)((*_gen)());
       }
     }
 
