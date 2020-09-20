@@ -44,7 +44,7 @@ namespace Storage_B
       }
     }
 
-    T operator()()
+    T operator()() const
     {
       if constexpr (std::is_integral<T>::value)
       {
