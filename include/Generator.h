@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2019 James A. Chappell (rlrrlrll@gmail.com)
+// Copyright (c) 2023 James A. Chappell (rlrrlrll@gmail.com)
 //
 
 #pragma once

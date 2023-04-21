@@ -16,17 +16,18 @@ namespace
 
     virtual std::mt19937_64& operator()() const
     {
-      return _gen;
+      return gen_;
     }
   
   private:
-    static std::mt19937_64 _gen;
+    static std::mt19937_64 gen_;
   };
 
-  std::mt19937_64 GeneratorImpl::_gen = std::mt19937_64(std::random_device{}());
+  std::mt19937_64 GeneratorImpl::gen_ =
+      std::mt19937_64(std::random_device{}());
 }
 
 std::unique_ptr<Generator> Storage_B::Generator::Create()
 {
-  return std::move(std::make_unique<GeneratorImpl>());
+  return std::make_unique<GeneratorImpl>();
 }

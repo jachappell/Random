@@ -2,7 +2,7 @@ PROG=example
 OBJDIR=.obj
 CC=g++
 
-CFLAGS = -Wall -O3 --std=c++1z -I ../include
+CFLAGS = -Wall -O3 -std=c++20 -I ../include
 LDFLAGS = -L../lib -lRandom
 
 $(shell mkdir -p $(OBJDIR)) 
