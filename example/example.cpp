@@ -7,15 +7,14 @@ using namespace Storage_B;
 
 int main()
 {
-
   auto num = 10u;
 
   auto die = Random<unsigned short>(1, 6);
   std::cout << "Simulate " << num <<  " dice (die) rolls:" << '\n';
   for (auto i = 0u ; i < num ; ++i)
   {
-    std::cout << "Roll " << std::setfill(' ') << std::setw(2) << i + 1  << ": "
-              << die() << '\n';
+    std::cout << "Roll " << std::setfill(' ') << std::setw(2)
+              << i + 1  << ": " << die() << '\n';
   }
 
   auto min = -1.0;

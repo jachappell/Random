@@ -52,7 +52,7 @@ namespace Storage_B
       {
         return (*dis_.in)((*gen_)());
       }
-      else if (std::is_floating_point<T>::value)
+      else
       {
         return (*dis_.re)((*gen_)());
       }
