@@ -21,7 +21,7 @@ namespace Storage_B
       {
         dis_.in = new std::uniform_int_distribution<T>(low, high);
       }
-      else if (std::is_floating_point<T>::value)
+      else
       {
         dis_.re = new std::uniform_real_distribution<T>(low, high);
       }
